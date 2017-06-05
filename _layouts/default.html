@@ -1,51 +1,94 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+<head>
+  <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}</title>
 
-    {% include meta.html %}
+  {% include meta.html %}
 
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="{{ site.baseurl }}/assets/css/noscript.css" /></noscript>
+  <meta charset="utf-8" />
+</head>
+<body class="is-loading">
+  <!-- Wrapper -->
+  <div id="wrapper" class="fade-in">
+    <!-- Copyright -->
 
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+    <!-- Header -->
+      <header id="header">
+        <a href="{{ site.baseurl }}" class="logo">{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}</a>
+      </header>
 
-    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
-  </head>
+    <!-- Nav -->
+      <nav id="nav">
+        <ul class="links">
+          <li><a href="{{ site.baseurl }}">HKIS Talent</a></li>
+          <li><a href="{{ site.baseurl }}/generic">Generic Page</a></li>
+          <li><a href="{{ site.baseurl }}/elements">Elements Page</a></li>
+        </ul>
+        <ul class="icons">
+          <li><a href="https://www.facebook.com/hkistalent/" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+          <li><a href="https://www.instagram.com/hkistalent/" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+        </ul>
+      </nav>
 
-  <body>
-    <div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
+    {{ content }}
 
-          <div class="site-info">
-            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-            <p class="site-description">{{ site.description }}</p>
+    <!-- Footer -->
+    <footer id="footer">
+      <section>
+        <form method="post" action="#">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" />
           </div>
-
-          <nav>
-            <a href="{{ site.baseurl }}/">Blog</a>
-            <a href="{{ site.baseurl }}/about">About</a>
-          </nav>
-        </header>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" />
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" rows="3"></textarea>
+          </div>
+          <ul class="actions">
+            <li><input type="submit" value="Send Message" /></li>
+          </ul>
+        </form>
+      </section>
+      <section class="split contact">
+        <section class="alt">
+          <h3>Address</h3>
+          <p>1 Red Hill Rd, Tai Tam<br />
+            Hong Kong SAR</p>
+          </section>
+          <section>
+            <h3>Phone</h3>
+            <p><a href="#">(000) 000-0000</a></p>
+          </section>
+          <section>
+            <h3>Email</h3>
+            <p><a href="#">hkistalent@gmail.com</a></p>
+          </section>
+          <section>
+            <h3>Social</h3>
+            <ul class="icons alt">
+              <li><a href="https://www.facebook.com/hkistalent/" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+              <li><a href="https://www.instagram.com/hkistalent/" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+            </ul>
+          </section>
+        </section>
+      </footer>
+      <div id="copyright">
+        <ul><li>&copy; HKIS Talent</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
       </div>
     </div>
-
-    <div id="main" role="main" class="container">
-      {{ content }}
-    </div>
-
-    <div class="wrapper-footer">
-      <div class="container">
-        <footer class="footer">
-          {% include svg-icons.html %}
-        </footer>
-      </div>
-    </div>
-
-    {% include analytics.html %}
+    <!-- Scripts -->
+    <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/jquery.scrollex.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/jquery.scrolly.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/skel.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/util.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/main.js"></script>
   </body>
-</html>
+  </html>
